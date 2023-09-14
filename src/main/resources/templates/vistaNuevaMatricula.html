@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+		integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	<title>Document</title>
+</head>
+<body>
+	<h1 style="color: rgb(40, 247, 18);">Nueva Matricula</h1>
+	<form th:action="@{/matriculas/crearMatricula}" th:object="${matriculaTemp}" method="post">
+		<table class="table table-dark table-hover">
+			<tr>
+				<td>
+					<label>Codigo Materia:</label>
+				</td>
+				<td>
+					<input type="text" id="codigo" th:field="${matriculaTemp.codigo}">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Cedula Estudiante:</label>
+				</td>
+				<td>
+					<input type="text" id="cedula" th:field="${matriculaTemp.cedula}">
+				</td>
+			</tr>
+			
+		</table>
+		<input type="submit" class="btn btn-success" value="Guardar Matricula">
+	</form>
+</body>
+</html>
